@@ -62,6 +62,7 @@ const FilmDialog = ({ open, onCloseHandler, film, filmStatus, onChangeFilmStatus
       aria-labelledby="customized-dialog-title"
       open={open}
       filmStatus={filmStatus}
+      sx={{ textAlign: 'center' }}
     >
       <BootstrapDialogTitle id="customized-dialog-title">
         {film?.Title}

@@ -61,19 +61,6 @@ const MainPage = () => {
   const handleFilmStatusSave = () => {
     handleDialogClose();
   };
-  
-  const Copyright = () => {
-    return (
-      <Typography variant="body2" color="text.secondary" align="center">
-        {'Copyright © '}
-        <Link color="inherit" href="https://mui.com/">
-          Your Films
-        </Link>{' '}
-        {new Date().getFullYear()}
-        {'.'}
-      </Typography>
-    );
-  }
 
   return (
     <main className='App'>
@@ -95,7 +82,7 @@ const MainPage = () => {
                 color="text.primary"
                 gutterBottom
               >
-                Your Films
+                My Films
               </Typography>
               <Typography variant="h5" align="center" color="text.secondary" paragraph>
               Find and collect your favorite movies of all time.
