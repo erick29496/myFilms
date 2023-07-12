@@ -1,21 +1,28 @@
 import * as React from 'react';
 
+import { AuthContext, useAuth } from '../utils/hooks/useAuth.utils';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { useContext, useEffect } from 'react';
 
 import CssBaseline from '@mui/material/CssBaseline';
-import MenuAppBar from '../components/app.bar/app-bar.component'
+import Layout from '../components/layout/layout.component';
+import { useNavigate } from 'react-router-dom';
 
 const ProfilePage = () => {
 
-  const theme = createTheme();
+  const { user, setUser } = React.useContext(AuthContext);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!user) {
+      navigate('/');
+    }
+  });
 
   return (
-    <main className='App'>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <MenuAppBar/>
-      </ThemeProvider>
-    </main>
+    <Layout>
+      <h1>Profile</h1>
+    </Layout>
   );
 };
 
