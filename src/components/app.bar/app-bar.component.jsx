@@ -40,6 +40,13 @@ const MenuAppBar = () => {
     navigate('/profile');
   }
 
+  const handleLogout = () => {
+    handleClose();
+    localStorage.removeItem("user");
+    setUser('');
+    handleHome();
+  }
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -83,6 +90,7 @@ const MenuAppBar = () => {
               >
                 <MenuItem onClick={handleProfile}>Profile</MenuItem>
                 <MenuItem onClick={handleAccount}>My account</MenuItem>
+                <MenuItem onClick={handleLogout}>Logout</MenuItem>
               </Menu>
             </div>
           )}

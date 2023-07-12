@@ -9,6 +9,7 @@ export const useAuth = () => {
     const logGoogleUser = async () => {
         const { user: _user } = await signInWithGooglePopup();
         setUser(_user.uid);
+        localStorage.setItem("user", _user.uid);
         createUserDocumentFromAuth(user);
     }
 
